@@ -15,10 +15,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
+Route::get('/create', function () {
     return view('welcome');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
 
 Route::post('/store', function (Request $request) {
 
@@ -36,7 +39,9 @@ Route::post('/store', function (Request $request) {
     //funciona
     // Storage::disk('s3')->put('buda/budha.txt','ola buda');
     
-    Storage::disk('s3')->delete('buda/budha.txt','ola buda');
+    $path = Storage::disk('s3')->putFile('files', $request->file('image'));    
+
+    // Storage::disk('s3')->delete('buda/budha.txt','ola buda')
     
     //funciona - ele mostrou o conteudo que esta dentro do arquivo txt
     // dd(Storage::disk('s3')->get('ola.txt'));
@@ -51,12 +56,11 @@ Route::post('/store', function (Request $request) {
 
     //funciona
     // $s3 = App::make('aws')->createClient('s3');
-
     // $s3->putObject(array(
     //     'Bucket'     => "lorium17-teste-bucket1",
     //     'Key'        => 'enso.jpg',
     //     'SourceFile' => $request->file('image')->getRealPath(),
     // ));
     
-    return view('welcome');
+    return back();
 });

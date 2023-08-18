@@ -19,17 +19,9 @@
   </header>
   <main>
 
-    <form action="/store" method="POST" enctype="multipart/form-data">
-        @csrf
-        
-        <div class="mb-3">
-            <label for="" class="form-label">Choose file</label>
-            <input type="file" class="form-control" name="image" id="" placeholder="" aria-describedby="fileHelpId">
-            <div id="fileHelpId" class="form-text">Help text</div>
-        </div>
-
-        <button>ok</button>
-    </form>
+    @php $url = Storage::disk('s3')->url('files/5nRvkMqO08APP8J9qRkqfRcc09RpHiEUOF4xYVbI.png'); echo $url; @endphp
+    
+    <img src="{{$url}}" alt="ops">
 
   </main>
   <footer>
