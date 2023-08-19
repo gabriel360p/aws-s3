@@ -14,7 +14,7 @@ chave de acesso;
 chave secreta de acesso;
 nome do balde;
 essas informações serão colocadas no arquivo .env 
-nas linhas 40, 41 (42 só muda se mudar a região do bucket) e 43 serão colocadas informações (AWS_ACCESS_KEY_ID = chave de acesso, A1SJBDHollRb81xBzP3cZC/bGWehIYqYVBVe7RzK = chave secreta de acesso, AWS_BUCKET = nome do balde)
+nas linhas 40, 41 (42 só muda se mudar a região do bucket) e 43 serão colocadas informações (AWS_ACCESS_KEY_ID = chave de acesso, = chave secreta de acesso, AWS_BUCKET = nome do balde)
 
 flysystem 3.0 (versão que foi utilzada na hora)
 link do repositório:
